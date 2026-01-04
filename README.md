@@ -171,11 +171,128 @@
     </div>
   </section>
 
-  <!-- SHOP -->
-  <section id="shop" class="page hidden">
-    <h2 class="text-3xl font-bold mb-4">Shop</h2>
-    <p class="text-zinc-400">Coming soon: game passes, perks, and donations.</p>
-  </section>
+<!-- SHOP -->
+<section id="shop" class="page hidden">
+  <h2 class="text-3xl font-bold mb-2">Shop</h2>
+  <p class="text-zinc-400 mb-6">Support our community and enhance your roleplay experience with exclusive items and perks.</p>
+
+  <!-- Premium VIP Ranks -->
+  <h3 class="text-xl font-semibold mb-4 text-nyc-blue">Premium VIP Ranks</h3>
+  <p class="text-zinc-400 mb-6">Support us by purchasing VIP and receive benefits in NYCRP. Use <code>/perks</code> in Discord to see all perks.</p>
+
+  <div class="flex flex-col md:flex-row gap-6 mb-8">
+    <!-- NYCRP+ -->
+    <div class="glass rounded-2xl p-6 flex-1 flex flex-col justify-between">
+      <h4 class="text-lg font-bold mb-2">NYCRP+</h4>
+      <p class="text-2xl font-bold mb-2">499 R$</p>
+      <ul class="list-disc ml-5 text-zinc-300 mb-4">
+        <li>Priority assistance in tickets</li>
+        <li>Special NYCRP+ Discord role</li>
+        <li>Exclusive chat channel access</li>
+        <li>Reduced cooldowns for certain marketplace items</li>
+        <li>Early access to selected announcements & events</li>
+      </ul>
+      <a href="https://www.roblox.com/game-pass/1591915423/NYCRP-Plus" target="_blank" 
+         class="btn-primary text-center py-2 rounded-xl mt-auto">Purchase</a>
+    </div>
+
+    <!-- NYCRP Elite -->
+    <div class="glass rounded-2xl p-6 flex-1 flex flex-col justify-between">
+      <h4 class="text-lg font-bold mb-2">NYCRP Elite</h4>
+      <p class="text-2xl font-bold mb-2">799 R$</p>
+      <ul class="list-disc ml-5 text-zinc-300 mb-4">
+        <li>Includes everything from NYCRP+</li>
+        <li>Exclusive NYCRP Elite role</li>
+        <li>Top-priority support in tickets</li>
+        <li>Elite-only giveaways</li>
+        <li>Premium marketplace discounts</li>
+        <li>Early access to new features</li>
+        <li>Additional customization perks</li>
+      </ul>
+      <a href="https://www.roblox.com/game-pass/1593495891/NYCRP-Elite" target="_blank"
+         class="btn-primary text-center py-2 rounded-xl mt-auto">Purchase</a>
+    </div>
+  </div>
+
+  <!-- Donations -->
+  <h3 class="text-xl font-semibold mb-4 text-nyc-blue">Donations</h3>
+  <div class="flex flex-col md:flex-row gap-6 mb-8">
+    <div class="glass rounded-2xl p-4 flex-1 flex flex-col justify-between">
+      <h4 class="font-bold mb-2">Small Donation</h4>
+      <p class="text-zinc-400 mb-2">Support our community with a small donation</p>
+      <p class="font-bold mb-4">100 R$</p>
+      <a href="https://www.roblox.com/game-pass/1594137898/Donate-250" target="_blank" 
+         class="btn-primary text-center py-2 rounded-xl mt-auto">Purchase</a>
+    </div>
+    <div class="glass rounded-2xl p-4 flex-1 flex flex-col justify-between">
+      <h4 class="font-bold mb-2">Medium Donation</h4>
+      <p class="text-zinc-400 mb-2">Support our community with a medium donation</p>
+      <p class="font-bold mb-4">500 R$</p>
+      <a href="https://www.roblox.com/game-pass/1591571439/Donate-2000" target="_blank" 
+         class="btn-primary text-center py-2 rounded-xl mt-auto">Purchase</a>
+    </div>
+    <div class="glass rounded-2xl p-4 flex-1 flex flex-col justify-between">
+      <h4 class="font-bold mb-2">Large Donation</h4>
+      <p class="text-zinc-400 mb-2">Support our community with a large donation</p>
+      <p class="font-bold mb-4">1000 R$</p>
+      <a href="https://www.roblox.com/game-pass/1592137343/Donate-1000" target="_blank" 
+         class="btn-primary text-center py-2 rounded-xl mt-auto">Purchase</a>
+    </div>
+    <div class="glass rounded-2xl p-4 flex-1 flex flex-col justify-between">
+      <h4 class="font-bold mb-2">Massive Donation</h4>
+      <p class="text-zinc-400 mb-2">Support our community with a massive donation</p>
+      <p class="font-bold mb-4">2000 R$</p>
+      <a href="https://www.roblox.com/game-pass/1591915423/Donate-1000" target="_blank" 
+         class="btn-primary text-center py-2 rounded-xl mt-auto">Purchase</a>
+    </div>
+  </div>
+
+  <!-- Paid Ads -->
+  <h3 class="text-xl font-semibold mb-4 text-nyc-blue">Paid Advertisements</h3>
+  <div class="flex flex-col md:flex-row gap-6 mb-8">
+    <div class="glass rounded-2xl p-4 flex-1">
+      <h4 class="font-bold mb-2">:pingw:everyone Paid Ad</h4>
+      <a href="https://www.roblox.com/game-pass/1480214646/Paid-Ad-Everyone-Ping" target="_blank"
+         class="btn-primary py-2 rounded-xl">Purchase</a>
+    </div>
+    <div class="glass rounded-2xl p-4 flex-1">
+      <h4 class="font-bold mb-2">:pingw:here Paid Ad</h4>
+      <a href="https://www.roblox.com/game-pass/1480056583/Paid-Ad-Here-Ping" target="_blank"
+         class="btn-primary py-2 rounded-xl">Purchase</a>
+    </div>
+  </div>
+
+  <!-- Policies Dropdowns -->
+  <div class="glass rounded-2xl p-4 mb-4 cursor-pointer" onclick="toggleDropdown('marketPolicy')">
+    <h3 class="text-xl font-semibold flex justify-between items-center">
+      NYCRP Marketplace Policy
+      <span id="marketPolicyIcon">▼</span>
+    </h3>
+  </div>
+  <div id="marketPolicy" class="glass rounded-2xl p-4 mb-6 hidden max-h-96 overflow-y-auto text-zinc-300">
+    <ul class="list-disc ml-6 space-y-3">
+      <li>No Refunds: All sales are final. Ensure you understand what you’re buying.</li>
+      <li>Accurate Information Required: Provide correct info when redeeming purchases.</li>
+      <li>Redeeming Purchases: Open a ticket within 7 days to redeem items.</li>
+      <li>Chargebacks & Fraud: Will lead to removal, blacklisting, and revocation of items.</li>
+      <li>Policy Agreement: By purchasing, you agree to all policies listed above.</li>
+    </ul>
+  </div>
+
+  <div class="glass rounded-2xl p-4 mb-4 cursor-pointer" onclick="toggleDropdown('subscriptionPolicy')">
+    <h3 class="text-xl font-semibold flex justify-between items-center">
+      NYCRP Subscription Policy
+      <span id="subscriptionPolicyIcon">▼</span>
+    </h3>
+  </div>
+  <div id="subscriptionPolicy" class="glass rounded-2xl p-4 hidden max-h-96 overflow-y-auto text-zinc-300">
+    <h4 class="font-bold mb-2">Subscription Tiers</h4>
+    <ul class="list-disc ml-6 space-y-2">
+      <li><strong>NYCRP+</strong>: Priority ticket support, special Discord role, exclusive chat, marketplace perks, early access.</li>
+      <li><strong>NYCRP Elite</strong>: All NYCRP+ perks plus Elite-only giveaways, top-priority support, discounts, early access, customization perks.</li>
+    </ul>
+  </div>
+</section>
 
   <!-- GAME -->
   <section id="game" class="page hidden">
@@ -280,25 +397,4 @@
 </script>
 
 </body>
-<div class="glass rounded-2xl p-6">
-  <h3 class="font-semibold">Discord Members</h3>
-  <p class="text-sm text-zinc-400">Total people in server</p>
-  <p id="discordCount" class="mt-2">Loading...</p>
-</div>
-
-<script>
-async function updateDiscordCount() {
-  try {
-    const response = await fetch('https://your-bot-server.com/membercount');
-    const data = await response.json();
-    document.getElementById('discordCount').textContent = data.count;
-  } catch(err) {
-    document.getElementById('discordCount').textContent = 'Error';
-  }
-}
-
-// Update immediately and optionally every 60 seconds
-updateDiscordCount();
-setInterval(updateDiscordCount, 60000);
-</script>
-<iframe src="https://discord.com/widget?id=1404148304333246599&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+</html>
