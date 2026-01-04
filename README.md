@@ -1,184 +1,304 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>NYCRP Staff Hub — Custom (Tabs)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-      :root{--bg:#f7f8fb;--card:#ffffff;--accent:#1a73e8;--muted:#6b7280}
-      *{box-sizing:border-box}
-      body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:#0f172a}
-      header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:var(--card);border-bottom:1px solid #e6eefc;position:sticky;top:0;z-index:60}
-      .brand{display:flex;align-items:center;gap:12px}
-      .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(45deg,var(--accent),#6ea8ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
-      nav{display:flex;gap:8px}
-      nav button{background:transparent;border:0;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer;color:var(--muted)}
-      nav button.active{background:#eaf2ff;color:var(--accent)}
-      main{max-width:1100px;margin:28px auto;padding:0 18px}
-      .card{background:var(--card);padding:26px;border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.04)}
-      h1{margin:0 0 8px 0;font-size:22px}
-      h2{margin-top:20px}
-      section{display:none}
-      section.active{display:block}
-      pre{white-space:pre-wrap;font-family:inherit}
-      footer{max-width:1100px;margin:18px auto;padding:12px 18px;color:var(--muted);font-size:13px}
-      @media (max-width:800px){nav{overflow:auto}}
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="brand">
-        <div class="logo">NY</div>
-        <div>
-          <div style="font-weight:800">NYCRP Staff Hub</div>
-          <div style="font-size:12px;color:var(--muted)">Staff Training and Docs</div>
-        </div>
-      </div>
-      <nav aria-label="Main Navigation">
-        <button data-tab="home" class="active">Home</button>
-        <button data-tab="chain">Chain of Command</button>
-        <button data-tab="regs">Regulations/Conduct</button>
-        <button data-tab="resources">Resources</button>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>New York City Roleplay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <main>
-      <div class="card">
-        <section id="home" class="active">
-          <h1>Staff Training and Education</h1>
-          <h2>Welcome!</h2>
-          <p>Welcome to the New York City Roleplay Staff Hub! Listed above you can find information ranging from the Chain of Command to guides you should follow to be the perfect moderator.</p>
-        </section>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        <section id="chain">
-          <h1>Chain of Command</h1>
-          <p><strong>Director Team -</strong> Directors oversee the entire server and make voted decisions. Do not DM or ping them; use tickets or staff chat.</p>
-          <p><strong>Management Team -</strong> Handle large reports, monitor performance, and oversee IA and lower staff.</p>
-          <p><strong>Internal Affairs Team -</strong> Handle tickets, strikes, amd staff infractions. Go to them before upper management.</p>
-          <p><strong>Administrative Team -</strong> Oversee moderators, manage bans, and resolve serious in-game issues.</p>
-          <p><strong>Moderation Team -</strong> Issue warnings and kicks, and ensure fair rule enforcement in-game.</p>
-        </section>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-        <section id="regs">
-          <h1>Staff Regulations and Conduct</h1>
-          <p>Staff are not permitted to perform law enforcement duties while on duty. This includes speeding, running red lights, and running stop signs.</p>
-          <p>Roleplaying of any sort while on duty is prohibited and will result in punishment.</p>
-          <p>If a player asks to heal, always check for roleplay context first, to avoid ruining roleplays.</p>
-          <p><strong>Rank Uniforms:</strong> Staff members must wear their designated rank uniforms while on duty to ensure they are easily identifiable. (Currently Unavaliable)</p>
-          <p>If you are wearing the staff uniform, nothing should be covering it, so that the community members can identify your rank.</p>
-          <p><strong>Staff Cars Only:</strong> Use only designated staff cars while on duty. Personal or roleplay vehicles are not allowed for staff use during shifts.</p>
-          <p><strong>Professionalism:</strong> Maintain a professional and respectful demeanor with players and fellow staff members at all times.</p>
-          <p><strong>Impartiality:</strong> Enforce rules fairly and without bias. Treat all players equally, regardless of their rank or status on the server.</p>
-          <p>You must use 4+ letters at all times for all commands.</p>
-          <p><strong>Chain of Command:</strong> Follow the chain of command by pinging the lowest rank online that can assist you. (Mod → Admin → IA → Mgmt → BoD)</p>
-          <p><strong>Communication:</strong> Keep open lines of communication with other staff members. Report any serious issues or incidents promptly.</p>
-          <p>In any mod and all mod calls, the user MUST have video evidence. We do NOT take witnesses or logs as proof.</p>
-          <p>Avoid arguing with members; you have the final say, and incidents can be reported through a ticket.</p>
-          <p>If a user asks for a supervisor, finish the scene and guide them to open a ticket in our communication server.</p>
-          <p>You may NOT ping or TP to HRs without permission. PM them instead.</p>
-          <p>If you’re unresponsive for 5+ minutes in-game, it will be considered shift grinding.</p>
-          <p>GTA driving includes recklessly driving in opposite lanes, crashing into poles, or driving medians.</p>
-          <p>Do not park at medians or islands. Continuous patrolling ensures good RP.</p>
-        </section>
+  <style>
+    :root {
+      --nyc-blue: #3bb6ff;
+      --nyc-blue-dark: #1e90d4;
+      --nyc-light: #ffffff;
+      --nyc-dark: #000000;
+      --nyc-grey: #222222;
+    }
 
-        <section id="resources">
-          <h1>Resources</h1>
-          <h2>Guides</h2>
-          <h3>Discord Checks Guide</h3>
-          <p>Always do a voice channel check with all players and a text channel check.</p>
-          <ul>
-            <li>Make sure all members have their account linked and verified.</li>
-            <li>Check if the user has read and accepted all server rules.</li>
-            <li>Ensure no inappropriate content in usernames or profiles.</li>
-            <li>Respond politely and professionally to questions or issues.</li>
-          </ul>
-          <p><strong>Are They in the Discord Server & VC?</strong></p>
-          <p>Use the command <code>/erlc membercheck</code>. This will pull up all players in-game and show their Discord status.</p>
-          <ul>
-            <li>If they are in the Discord</li>
-            <li>If they are in a Voice Channel (VC)</li>
-          </ul>
-          <p>This works through Central or Melonly.</p>
-          <ul>
-            <li>Use Melonly as the main tool.</li>
-            <li>If Melonly is down, switch to Central to complete the check.</li>
-          </ul>
-          <p><strong>If Melonly or Central Are Down Completely:</strong></p>
-          <ul>
-            <li>You may teleport to the player ONLY to bring them to the Staff Base.</li>
-            <li>Ask them if they are in the Discord and in a VC (if required by rules).</li>
-            <li>If they aren’t, or they lie/refuse to answer, you may jail them if under 39/40. If it’s 39/40, you may kick them.</li>
-          </ul>
-          <p>Stay professional and consistent.These checks are for staff use only; no abuse will be tolerated.</p>
+    body {
+      scroll-behavior: smooth;
+      background-color: var(--nyc-dark);
+      color: var(--nyc-light);
+      font-family: 'Montserrat', sans-serif;
+    }
 
-          <h3>H/M Guide</h3>
-          <p>All :h's listed below can be used freely by staff with the Moderator rank or higher.</p>
-          <ul>
-            <li>:h Family Jewls is now open! Come get something for yourself or a friend!</li>
-            <li>:h HRP is now open! Come see the views or get a cabin!</li>
-            <li>:h Three Guys: :h Three guys is now open! Come get a quick bite!</li>
-            <li>:h La Mesa: :h La mesa is now open! See you there!</li>
-          </ul>
+    /* GLASS CARDS */
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
 
-          <h2>Requirements and Policies</h2>
-          <p><strong>Minimum Hours:</strong> You are expected to complete 4 hours every week on shift with Melonly. You have a week to complete this quota.</p>
-          <p><strong>Leave of Absence:</strong> If you cannot complete this, we have a system called Leave of Absence (LOA). This is the system we use if you are not able to go on duty. Reasons you can take LOA include mental/health issues, school exams, holidays, and many other reasons.</p>
-          <p><strong>Promotions:</strong> A single promotion lasts 6 hours and requires 2 logs per hour. A double promotion lasts 14 hours and requires 2 logs per hour. A triple promotion lasts 30 hours and requires 2 logs per hour.</p>
-          <p><strong>Strike Policy:</strong> If you receive 2 or more strikes within a promotion work, you will not be eligible for a promotion for that week.</p>
-          <p><strong>Infraction Policy:</strong> All infractions cannot be appealed until after the expiry timer is up.</p>
-          <p><strong>Staff of the Week:</strong> To be named staff of the week, you must have the most hours out of the whole staff team.</p>
-          <p><strong>Retiring Policy:</strong> Users below the rank of JA will not receive "Retired Staff". All users above the rank of TIA are eligible for the "Retired High Rank" role.</p>
-          <p><strong>Reinstatement Policy:</strong> Prior TIA+ members can return as "Junior Mod Rank" max. "Retired Staff" role members (JA+) can return as "Trial Staff".</p>
+    .glass:hover {
+      transform: translateY(-4px) scale(1.02);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
 
-          <h2>Staff Outposts</h2>
-          <p>Outposts are numbered in order from most to least important; go to the most important ones. The staff outposts are numbered from most important (1) to least important (4) on the image below.</p>
-          <p>You must be doing discord checks or mod calls while your car is at an outpost.</p>
-          <p>There will be a maximum of 2 on duty staff members per outpost.</p>
-          <p>Don’t make it obvious that it is a staff base, all you should have with you is your car. People may come up to you, but you are permitted to load them if they harass or interfere with you.</p>
-          <p>Make sure you are surveilling the post and the areas nearby in order to maintain smooth roleplay and order around the server. You must also conduct discord & voice chat checks at these staff outposts.</p>
-          <ol>
-            <li>Supervise River City Civilian Spawn, and surrounding areas.</li>
-            <li>Supervise Gun Store, Fire Department, and surrounding areas.</li>
-            <li>Supervise Mod Shop, the intersections nearby, the Bank, the Fire department, and surrounding areas.</li>
-            <li>Supervise the City Center, the City itself, the Shopping Plaza, and Three Guys.</li>
-          </ol>
-          <ol>
-            <li>You should NEVER just be standing still, you should either be conducting discord checks or handling rule-breaking near your outpost.</li>
-            <li>You should NEVER interfere with roleplay. You should remain at your outpost unless you witness any rule-breaking near your outpost.</li>
-            <li>You should NEVER help with police chases. In a police chase, there really aren't any instances of GTA-Driving, so lay low on that unless there is any rule-breaking involved.</li>
-          </ol>
-          <p><strong>Staff Outposts Images and Locations:</strong></p>
-          <p>Outpost 1: Spawn — The most crime-filled area and should be closely supervised, this is our main priority for moderation as it is where most trolling and other rule-breaking happens. (expect to get VDMed)</p>
-          <p>Outpost 2: Gun Store — Typically where the most RDM happens because of the quick access to guns and people to fight, expect a lot of RDM logs.</p>
-          <p>Outpost 3: Mod Shop — Supervises the intersection, FD station, and bank to ensure RDM and other fail roleplay is not happening. Always on alert for gunshots to investigate.</p>
-          <p>Outpost 4: Three Guys — The least active of the 4, supervise the city center, jewelry, and nearby city area. Prioritize discord checks and VC checks.</p>
-          <p>Please remember for all of these locations that your priorities should be supervising and doing discord/VC checks. Always make sure you are doing mod calls when they appear and to come back when finished.</p>
-        </section>
-      </div>
-    </main>
+    /* NAVBAR */
+    .nav-link {
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
 
-    <footer>
-      <div style="max-width:1100px;margin:8px auto;padding:0 18px;color:var(--muted)">© 2025 New York City Roleplay — Staff Hub</div>
-    </footer>
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: var(--nyc-blue);
+      transition: width 0.3s ease;
+    }
 
-    <script>
-      const tabs = document.querySelectorAll('nav button');
-      const sections = document.querySelectorAll('main section');
-      tabs.forEach(t => t.addEventListener('click', () => {
-        tabs.forEach(b=>b.classList.remove('active'));
-        t.classList.add('active');
-        const id = t.getAttribute('data-tab');
-        sections.forEach(s=>{
-          if(s.id===id) s.classList.add('active'); else s.classList.remove('active');
-        });
-        window.location.hash = id;
-      }));
-      const hash = window.location.hash.replace('#','');
-      if(hash){
-        const target = document.querySelector('nav button[data-tab="'+hash+'"]');
-        if(target) target.click();
+    .nav-link:hover {
+      color: var(--nyc-blue);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* BUTTONS */
+    .btn-primary {
+      background: var(--nyc-blue);
+      color: var(--nyc-light);
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--nyc-blue-dark);
+      transform: scale(1.06);
+      box-shadow: 0 0 20px rgba(59, 182, 255, 0.5);
+    }
+
+    /* PAGE ANIMATIONS */
+    .page {
+      animation: fadeSlide 0.6s ease forwards;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
       }
-    </script>
-  </body>
-</html>
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Apply subtle animation on all elements */
+    .glass, h1, h2, h3, p, ul, li, .btn-primary {
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    h1, h2, h3 {
+      color: var(--nyc-light);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 50px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="glass mx-4 mt-4 rounded-2xl p-4 flex items-center justify-between">
+  <div class="flex items-center gap-4">
+    <img src="https://i.imgur.com/p591Cmz.png" alt="NYC Roleplay Logo" class="logo-img">
+    <h1 class="font-bold text-xl">New York City Roleplay</h1>
+  </div>
+
+  <div class="flex items-center gap-6 text-sm">
+    <span class="nav-link" onclick="showPage('home')">Home</span>
+    <span class="nav-link" onclick="showPage('about')">About</span>
+    <span class="nav-link" onclick="showPage('media')">Media</span>
+    <span class="nav-link" onclick="showPage('shop')">Shop</span>
+    <span class="nav-link" onclick="showPage('game')">Game</span>
+    <span class="nav-link" onclick="showPage('rules')">Rules</span>
+
+    <a href="https://discord.gg/nycrole" target="_blank"
+       class="ml-4 px-6 py-2 rounded-xl btn-primary transition">
+      Join Discord
+    </a>
+  </div>
+</nav>
+
+<!-- PAGES -->
+<main class="p-8 max-w-7xl mx-auto">
+
+  <!-- HOME -->
+  <section id="home" class="page">
+    <h2 class="text-4xl font-bold mb-4">Welcome to New York City Roleplay</h2>
+    <p class="text-zinc-400 max-w-2xl">A professional ER:LC roleplay community focused on realism, structure, and immersive gameplay.</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="glass rounded-2xl p-6">Active Staff Team</div>
+      <div class="glass rounded-2xl p-6">Daily Roleplays</div>
+      <div class="glass rounded-2xl p-6">Custom Systems</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="page hidden">
+    <h2 class="text-3xl font-bold mb-4">About Us</h2>
+    <p class="text-zinc-400 max-w-3xl">New York City Roleplay (NYCRP) is an ER:LC-based roleplay server offering structured sessions, trained staff, and a welcoming community.</p>
+  </section>
+
+  <!-- MEDIA -->
+  <section id="media" class="page hidden">
+    <h2 class="text-3xl font-bold mb-4">Media</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-6">Image / Video</div>
+      <div class="glass rounded-2xl p-6">Image / Video</div>
+      <div class="glass rounded-2xl p-6">Image / Video</div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop" class="page hidden">
+    <h2 class="text-3xl font-bold mb-4">Shop</h2>
+    <p class="text-zinc-400">Coming soon: game passes, perks, and donations.</p>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="page hidden">
+    <h2 class="text-3xl font-bold mb-6">Game Status</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-semibold">ER:LC Server</h3>
+        <p class="text-sm text-zinc-400">Live server data</p>
+        <p class="mt-3">Status: <span class="text-green-400">Online</span></p>
+        <p>Players: <span id="playerCount">24</span> / 50</p>
+      </div>
+
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-semibold">Discord</h3>
+        <p class="text-sm text-zinc-400">Community size</p>
+        <p class="mt-3">Members: <span id="discordCount">312</span></p>
+      </div>
+
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-semibold">Session Info</h3>
+        <p class="text-sm text-zinc-400">Live roleplay status</p>
+        <p class="mt-3">Session: Active</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="page hidden">
+    <h2 class="text-3xl font-bold mb-4">Rules</h2>
+
+    <!-- In-Game Rules Dropdown -->
+    <div class="glass rounded-2xl p-4 mb-4 cursor-pointer" onclick="toggleDropdown('inGameRules')">
+      <h3 class="text-xl font-semibold flex justify-between items-center">
+        In-Game Rules
+        <span id="inGameRulesIcon">▼</span>
+      </h3>
+    </div>
+    <div id="inGameRules" class="glass rounded-2xl p-4 mb-6 hidden max-h-96 overflow-y-auto">
+      <ul class="list-disc ml-6 space-y-3">
+        <li><strong>Random Deathmatch:</strong> Full kills are not allowed unless properly justified. Excessive or mass killings are prohibited, and harming any member of the Fire Department is strictly forbidden.</li>
+        <li><strong>Vehicle Deathmatch:</strong> Random vehicle collisions and unrealistic driving are not allowed. Shooting at other vehicles without a valid roleplay reason is strictly prohibited.</li>
+        <li><strong>Cuff Rushing:</strong> Do not randomly arrest or cuff other players. Handcuffs must only be used with proper roleplay justification.</li>
+        <li><strong>Interfering with Scenes:</strong> Do not interfere with active roleplay scenes unless you are directly involved. Avoid disrupting or altering ongoing scenarios.</li>
+        <li><strong>Uniforms & Liveries:</strong> You must wear the correct uniform and vehicle livery for your department or rank. Failure to follow this rule may result in punishment.</li>
+        <li><strong>Terms of Service:</strong> All players are required to follow Roblox’s Terms of Service at all times.</li>
+        <li><strong>Unrealistic Avatars:</strong> Avoid using avatars that block vision, provide invisibility, or exploit glitches. Additional details can be found in the related announcement.</li>
+        <li><strong>New Life Rule:</strong> You may not remember events from a previous life or return to past scenes after respawning.</li>
+        <li><strong>Fail Roleplay:</strong> Unrealistic, disruptive, or inaccurate roleplay behavior is not allowed.</li>
+        <li><strong>Safe Zones:</strong> Crimes are not permitted in designated safe zones. These areas must remain roleplay-safe at all times.</li>
+        <li><strong>Booster Perks:</strong> Do not use booster perks unless you are an active server booster.</li>
+        <li><strong>Grapplers:</strong> Grapplers may only be used if you are certified within your whitelisted department.</li>
+        <li><strong>No Intention to Roleplay:</strong> Avoid actions such as standing on moving vehicles, shooting while driving, or ignoring active roleplay scenarios.</li>
+        <li><strong>VC Only:</strong> This server is voice-chat only, meaning you must be connected to voice chat during roleplay. You are not required to speak.</li>
+      </ul>
+    </div>
+
+    <!-- Discord Rules Dropdown -->
+    <div class="glass rounded-2xl p-4 mb-4 cursor-pointer" onclick="toggleDropdown('discordRules')">
+      <h3 class="text-xl font-semibold flex justify-between items-center">
+        Discord Rules
+        <span id="discordRulesIcon">▼</span>
+      </h3>
+    </div>
+    <div id="discordRules" class="glass rounded-2xl p-4 hidden max-h-96 overflow-y-auto">
+      <ul class="list-disc ml-6 space-y-3">
+        <li><strong>Respect:</strong> Treat everyone with kindness and respect. Harassment, hate speech, or personal attacks of any kind are strictly prohibited.</li>
+        <li><strong>Pinging:</strong> Do not ping members unnecessarily. Pinging High Rank+ staff without permission is not allowed.</li>
+        <li><strong>Language:</strong> Keep language appropriate at all times. Profanity and harmful or offensive content are not permitted.</li>
+        <li><strong>Common Sense:</strong> Use good judgment and contribute positively. Keep posts relevant, respectful, and beneficial to the community.</li>
+        <li><strong>Channel Usage:</strong> Use channels only for their intended purpose and keep discussions on-topic.</li>
+        <li><strong>Advertising:</strong> Approval is required before promoting servers, products, or services. All advertisements must be brief and relevant.</li>
+        <li><strong>Terms of Service:</strong> All members must follow Discord’s Terms of Service at all times.</li>
+        <li><strong>Bot Usage:</strong> Bots should only be used for their intended functions and in an appropriate manner.</li>
+        <li><strong>Feedback:</strong> Provide constructive and respectful suggestions. Troll or disruptive feedback may result in punishment. Honest feedback about staff is encouraged.</li>
+        <li><strong>Alt Accounts:</strong> The use of alternate accounts is strictly prohibited.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  lucide.createIcons();
+
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    const icon = document.getElementById(id + 'Icon');
+    if (el.classList.contains('hidden')) {
+      el.classList.remove('hidden');
+      icon.textContent = '▲';
+    } else {
+      el.classList.add('hidden');
+      icon.textContent = '▼';
+    }
+  }
+</script>
+
+</body>
+<div class="glass rounded-2xl p-6">
+  <h3 class="font-semibold">Discord Members</h3>
+  <p class="text-sm text-zinc-400">Total people in server</p>
+  <p id="discordCount" class="mt-2">Loading...</p>
+</div>
+
+<script>
+async function updateDiscordCount() {
+  try {
+    const response = await fetch('https://your-bot-server.com/membercount');
+    const data = await response.json();
+    document.getElementById('discordCount').textContent = data.count;
+  } catch(err) {
+    document.getElementById('discordCount').textContent = 'Error';
+  }
+}
+
+// Update immediately and optionally every 60 seconds
+updateDiscordCount();
+setInterval(updateDiscordCount, 60000);
+</script>
+<iframe src="https://discord.com/widget?id=1404148304333246599&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
